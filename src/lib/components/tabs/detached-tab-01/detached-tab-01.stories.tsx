@@ -76,14 +76,14 @@ CustomTabs.args = {
   secondaryColor: "#E4E4E46E",
   textColor: "#848484",
   highlightColor: "#fff",
-  height: 56,
+  height: 40,
   minWidth: 120,
   font: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 600,
-    lineHeight: 28,
+    lineHeight: 18,
   },
-  RenderTabs: ({ value, current, style, update }: TabProps) => {
+  RenderTabs: ({ value, style, update }: TabProps) => {
     const Icone = icones[value as keyof typeof icones];
     return (
       <h4 onClick={() => update(value)} key={value.toString()} style={style}>
