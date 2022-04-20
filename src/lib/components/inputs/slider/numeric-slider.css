@@ -1,0 +1,31 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.slider .cursor {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 12px);
+  cursor: pointer;
+  transition-property: left;
+  transition-duration: 0.2s;
+}
+.slider .bar {
+  width: 100%;
+  height: 6px;
+  background-color: #c9c7c7;
+}
+.slider .bar .current {
+  width: 50%;
+  height: 100%;
+  transition-property: width;
+  transition-duration: 0.2s;
+}
