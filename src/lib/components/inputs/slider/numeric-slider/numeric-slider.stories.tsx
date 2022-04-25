@@ -3,7 +3,7 @@ import { ComponentMeta } from "@storybook/react";
 import NumericSlider, { NumericSliderProps } from "./numeric-slider";
 
 export default {
-  title: "NumericSlider",
+  title: "Inputs/Slider/NumericSlider",
   component: NumericSlider,
 } as ComponentMeta<typeof NumericSlider>;
 

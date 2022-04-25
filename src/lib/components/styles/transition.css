@@ -1,0 +1,12 @@
+.gc.td2 {
+    transition-duration: 0.2s;
+}
+.gc.td4 {
+    transition-duration: 0.4s;
+}
+.gc.td6 {
+    transition-duration: 0.6s;
+}
+.gc.td8 {
+    transition-duration: 0.8s;
+}

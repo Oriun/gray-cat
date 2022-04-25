@@ -1,0 +1,1 @@
+export { default as DetachedTab01 } from './detached-tab-01/detached-tab-01';

@@ -1,20 +1,20 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import DetachedTab02, { DetachedTab02Props, TabProps } from "./detached-tab-02";
-import { RoundList } from "../../constantes";
+import DetachedTab03, { DetachedTab03Props, TabProps } from "./detached-tab-03";
+import { RoundList } from "../../../constantes";
 import { FaDatabase, FaLinux, FaCode } from "react-icons/fa";
 
 export default {
-  title: "DetachedTab 02",
-  component: DetachedTab02,
-} as ComponentMeta<typeof DetachedTab02>;
+  title: "Tabs/Detached/DetachedTab 03",
+  component: DetachedTab03,
+} as ComponentMeta<typeof DetachedTab03>;
 
 export const Uncontrolled = (
-  args: Omit<DetachedTab02Props, "current" | "update">
+  args: Omit<DetachedTab03Props, "current" | "update">
 ) => {
   const [current, setCurrent] = React.useState<string>(args.values[0]);
   return (
-    <DetachedTab02
+    <DetachedTab03
       current={current}
       update={setCurrent as (n: string) => void}
       {...args}
@@ -25,10 +25,10 @@ export const Uncontrolled = (
 Uncontrolled.args = {
   values: ["Option A", "Option B", "Option C"],
   rounded: RoundList.XXS,
-} as Omit<DetachedTab02Props, "current" | "update">;
+} as Omit<DetachedTab03Props, "current" | "update">;
 
-export const Controlled = (args: DetachedTab02Props) => (
-  <DetachedTab02 {...args} />
+export const Controlled = (args: DetachedTab03Props) => (
+  <DetachedTab03 {...args} />
 );
 
 Controlled.args = {
@@ -36,7 +36,7 @@ Controlled.args = {
   update: console.log,
   current: "Option A",
   rounded: RoundList.XXS,
-} as DetachedTab02Props;
+} as DetachedTab03Props;
 
 export const Tnj = Uncontrolled.bind({});
 Tnj.args = {
@@ -45,6 +45,8 @@ Tnj.args = {
   textColor: "#1D293F",
   highlightColor: "#B3CF42",
   lineColor: "#B3CF42",
+  lineHeight: 4,
+  // height: 56,
   font: {
     fontSize: 18,
     fontWeight: 500,
@@ -61,13 +63,13 @@ const icones = {
 CustomTabs.args = {
   values: ["Database", "Operating System", "Software"],
   rounded: RoundList.XXS,
-  RenderTabs: ({ value, style, update }: TabProps) => {
+  RenderTabs: React.forwardRef(({ value, style, update }, ref) => {
     const Icone = icones[value as keyof typeof icones];
     return (
-      <h4 onClick={() => update(value)} key={value.toString()} style={style}>
+      <h4 onClick={() => update(value)} key={value.toString()} style={style} ref={ref} className="gc m0">
         <Icone style={{ marginRight: 8 }} />
         {value}
       </h4>
     );
-  },
-} as Omit<DetachedTab02Props, "current" | "update">;
+  }),
+} as Omit<DetachedTab03Props, "current" | "update">;

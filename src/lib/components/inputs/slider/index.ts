@@ -1,9 +1,1 @@
-/**
- * 
- * 
- * Slider Input Component
- * 
- * 
- */
-
-export { default as default } from './numeric-slider'
+export { default as NumericSlider } from './numeric-slider'

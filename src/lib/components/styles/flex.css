@@ -1,0 +1,12 @@
+.gc.f {
+    display: flex;
+}
+.gc.f-cc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gc.fc {
+    display: flex;
+    flex-direction: column;
+}

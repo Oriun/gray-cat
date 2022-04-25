@@ -6,16 +6,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  options: {
-    storySort: {
-      order: [
-        'Main',
-        [
-          'Inuts', ['Slider'],
-          'Tabs', ['Detached', ['DetachedTab 01', 'DetachedTab 02', 'DetachedTab 03']],
-        ]
-      ]
-    }
-  }
-
 }

@@ -1,0 +1,30 @@
+.gc.w-fc {
+  width: fit-content;
+}
+.gc.w-mxc {
+  width: max-content;
+}
+.gc.w-mnc {
+  width: min-content;
+}
+.gc.w {
+  width: 100%;
+}
+.gc.w0 {
+  width: 0;
+}
+.gc.h-fc {
+  height: fit-content;
+}
+.gc.h-mxc {
+  height: fit-content;
+}
+.gc.h-mnc {
+  height: fit-content;
+}
+.gc.h {
+  height: 100%;
+}
+.gc.h0 {
+  height: 0;
+}

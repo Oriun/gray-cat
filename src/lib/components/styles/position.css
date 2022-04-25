@@ -1,0 +1,48 @@
+.gc.abs {
+    position: absolute;
+}
+.gc.fx {
+    position: fixed;
+}
+.gc.rel {
+    position: relative;
+}
+.gc.z0 {
+    z-index:0;
+}
+.gc.z1 {
+    z-index:1;
+}
+.gc.z2 {
+    z-index:2;
+}
+.gc.z4 {
+    z-index:4;
+}
+.gc.z8 {
+    z-index:8;
+}
+.gc.z16 {
+    z-index:16;
+}
+.gc.z32 {
+    z-index:32;
+}
+.gc.z1k {
+    z-index:1000;
+}
+.gc.i0 {
+    inset: 0;
+}
+.gc.b0 {
+    bottom: 0;
+}
+.gc.t0 {
+    top: 0;
+}
+.gc.l0 {
+    left: 0;
+}
+.gc.r0 {
+    right: 0;
+}

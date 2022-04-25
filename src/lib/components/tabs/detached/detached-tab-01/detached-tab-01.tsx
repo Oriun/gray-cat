@@ -1,6 +1,6 @@
 import React from "react";
-import { RoundList } from "../../constantes";
-import { Font } from "../../types";
+import { RoundList } from "../../../constantes";
+import { Font } from "../../../types";
 import "./detached-tab-01.css";
 
 export type TabProps = {

@@ -1,0 +1,13 @@
+.gc {
+    all: unset;
+    box-sizing: border-box;
+}
+.gc.-us{
+    user-select: none;
+}
+.gc.ptr {
+    cursor: pointer;
+}
+.gc.bxs-c {
+    box-sizing: content-box;
+}

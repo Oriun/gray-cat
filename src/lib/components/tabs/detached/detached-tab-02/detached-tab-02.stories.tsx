@@ -1,20 +1,20 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import DetachedTab03, { DetachedTab03Props, TabProps } from "./detached-tab-03";
-import { RoundList } from "../../constantes";
+import DetachedTab02, { DetachedTab02Props, TabProps } from "./detached-tab-02";
+import { RoundList } from "../../../constantes";
 import { FaDatabase, FaLinux, FaCode } from "react-icons/fa";
 
 export default {
-  title: "DetachedTab 03",
-  component: DetachedTab03,
-} as ComponentMeta<typeof DetachedTab03>;
+  title: "Tabs/Detached/DetachedTab 02",
+  component: DetachedTab02,
+} as ComponentMeta<typeof DetachedTab02>;
 
 export const Uncontrolled = (
-  args: Omit<DetachedTab03Props, "current" | "update">
+  args: Omit<DetachedTab02Props, "current" | "update">
 ) => {
   const [current, setCurrent] = React.useState<string>(args.values[0]);
   return (
-    <DetachedTab03
+    <DetachedTab02
       current={current}
       update={setCurrent as (n: string) => void}
       {...args}
@@ -25,10 +25,10 @@ export const Uncontrolled = (
 Uncontrolled.args = {
   values: ["Option A", "Option B", "Option C"],
   rounded: RoundList.XXS,
-} as Omit<DetachedTab03Props, "current" | "update">;
+} as Omit<DetachedTab02Props, "current" | "update">;
 
-export const Controlled = (args: DetachedTab03Props) => (
-  <DetachedTab03 {...args} />
+export const Controlled = (args: DetachedTab02Props) => (
+  <DetachedTab02 {...args} />
 );
 
 Controlled.args = {
@@ -36,7 +36,7 @@ Controlled.args = {
   update: console.log,
   current: "Option A",
   rounded: RoundList.XXS,
-} as DetachedTab03Props;
+} as DetachedTab02Props;
 
 export const Tnj = Uncontrolled.bind({});
 Tnj.args = {
@@ -61,13 +61,14 @@ const icones = {
 CustomTabs.args = {
   values: ["Database", "Operating System", "Software"],
   rounded: RoundList.XXS,
+  padding: 4,
   RenderTabs: ({ value, style, update }: TabProps) => {
     const Icone = icones[value as keyof typeof icones];
     return (
-      <h4 onClick={() => update(value)} key={value.toString()} style={style}>
+      <h4 className="gc m0 f-cc" onClick={() => update(value)} key={value.toString()} style={style}>
         <Icone style={{ marginRight: 8 }} />
         {value}
       </h4>
     );
   },
-} as Omit<DetachedTab03Props, "current" | "update">;
+} as Omit<DetachedTab02Props, "current" | "update">;

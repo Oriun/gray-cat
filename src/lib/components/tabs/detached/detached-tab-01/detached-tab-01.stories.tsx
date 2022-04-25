@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import DetachedTab01, { DetachedTab01Props, TabProps } from "./detached-tab-01";
-import { RoundList } from "../../constantes";
+import { RoundList } from "../../../constantes";
 import { FaDatabase, FaLinux, FaCode } from "react-icons/fa";
 
 export default {
-  title: "DetachedTab 01",
+  title: "Tabs/Detached/DetachedTab 01",
   component: DetachedTab01,
 } as ComponentMeta<typeof DetachedTab01>;
 
