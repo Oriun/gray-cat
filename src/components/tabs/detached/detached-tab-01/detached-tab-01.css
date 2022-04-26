@@ -2,7 +2,7 @@
 
 .tabs-detached-1 {
   margin-top: 50px;
-  padding: 10px;
+  /* padding: 10px; */
   width: fit-content;
   position: relative;
   display: grid;
@@ -18,7 +18,7 @@
 }
 .tabs-detached-1 .background-container {
   position: absolute;
-  inset: 10px;
+  /* inset: 10px; */
   z-index: 0;
 }
 .tabs-detached-1 .background {

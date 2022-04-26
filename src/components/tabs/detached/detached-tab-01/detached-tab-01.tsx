@@ -31,6 +31,14 @@ export interface DetachedTab01Props {
   height?: number | string;
   minWidth?: number | string;
   RenderTabs?: typeof BasicTab;
+  padding?:
+    | number
+    | {
+        top: number | string;
+        right?: number | string;
+        bottom?: number | string;
+        left?: number | string;
+      };
 }
 const DetachedTab01: React.FC<DetachedTab01Props> = ({
   update,
@@ -45,14 +53,38 @@ const DetachedTab01: React.FC<DetachedTab01Props> = ({
   height = 56,
   minWidth = 200,
   RenderTabs = BasicTab,
+  padding = 10,
 }) => {
   const index = (100 * values.indexOf(current)) / values.length;
+  const pad = function (type: "padding" | "inset") {
+    if (typeof padding === "number") return { [type]: padding };
+
+    const val = {
+      top: padding.top,
+      right: padding.right ?? padding.top,
+      left: padding.left ?? padding.right ?? padding.top,
+      bottom: padding.bottom ?? padding.top,
+    };
+
+    if (type === "inset") return val;
+
+    return {
+      paddingTop: val.top,
+      paddingRight: val.top,
+      paddingBottom: val.top,
+      paddingLeft: val.top,
+    };
+  };
   return (
     <div
       className="tabs-detached-1"
-      style={{ backgroundColor: secondaryColor, borderRadius: rounded * 1.5 }}
+      style={{
+        backgroundColor: secondaryColor,
+        borderRadius: rounded * 1.5,
+        ...pad("padding")
+      }}
     >
-      <div className="background-container">
+      <div className="background-container" style={pad("inset")}>
         <div
           className={"background"}
           style={{

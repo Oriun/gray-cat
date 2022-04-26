@@ -61,6 +61,7 @@ Tnj.args = {
     fontWeight: 600,
     lineHeight: 28,
   },
+  padding: 5
 };
 
 export const CustomTabs = Uncontrolled.bind({});
