@@ -19,9 +19,9 @@ async function main(versionIncrement) {
   const tarName = name.replace(/^[^a-zA-Z0-9]/gmi, '').replace(/[^a-zA-Z0-9]/gmi, '-') + '-' + newVersion + '.tgz'
 
   console.log('Updating package.json version to ' + newVersion)
-  await fs.writeFile('./package.json', JSON.stringify(packageJson), 'utf-8')
+  await fs.writeFile('./package.json', JSON.stringify(packageJson, null, 4), 'utf-8')
 
-  console.log('Tracking files with git' + name)
+  console.log('Tracking files with git')
   await new Promise((ok, ko) => {
     exec(`git add *`, (error, stdout) => {
       if (error) return ko(error)
@@ -53,14 +53,14 @@ async function main(versionIncrement) {
       ok()
     })
   })
-  console.log('Cleaning up' + name)
+  console.log('Cleaning up')
   await new Promise((ok, ko) => {
     exec(`git clean -fX`, (error, stdout) => {
       if (error) return ko(error)
-      console.log(stdout)
       ok()
     })
   })
+  await fs.rm(tarName)
 
   console.log("Congratulation")
 }

@@ -1,1 +1,3 @@
-export * as Detached from './detached'
+import * as Detached from './detached'
+
+export { Detached }
