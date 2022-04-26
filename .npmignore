@@ -1,0 +1,7 @@
+*.stories.js
+node_modues
+lib
+.storybook
+*.tsx
+*.ts
+!*.d.ts
