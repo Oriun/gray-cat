@@ -1,8 +1,7 @@
 {
   "name": "@oriun/gray-cat",
-  "version": "0.1.3",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
+  "version": "0.1.4",
+  "main": "src/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "src/**/*.css",
