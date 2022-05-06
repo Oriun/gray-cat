@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+.gc.amb {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background-color: blue;
+  padding: 8px 12px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);
+
+  user-select: none;
+}
+.gc.amb::after {
+  position: absolute;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  top: 4px;
+  left: 0;
+  content: "";
+  background-color: rgb(0, 0, 160);
+  z-index: -1;
+}
+@keyframes amb-load {
+    0% {
+        width: 8px;
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.gc.amb.loading:not(:active)::before {
+  position: absolute;
+  border-radius: 4px;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  animation: amb-load ease-in-out forwards;
+  animation-duration: var(--amb-duration,10s);
+}
+.gc.amb:active {
+  background-color: rgb(0, 0, 200);
+  top: 3px;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.gc.amb:active::after {
+  top: 1px;
+}
